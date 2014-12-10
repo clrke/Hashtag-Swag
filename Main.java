@@ -7,7 +7,8 @@ public class Main
 	{
 		try
 		{
-			try (BufferedReader reader = new BufferedReader(new FileReader(new File("input.txt"))))
+			try (BufferedReader reader = new BufferedReader(new FileReader(new File("input.txt")));
+				PrintWriter writer = new PrintWriter(new FileWriter(new File("output.txt"))))
 			{
 				int T;
 				T = Integer.parseInt(reader.readLine());
@@ -61,7 +62,7 @@ public class Main
 							tweet += hashtag.content;
 						}
 					}
-					System.out.println(tweet);
+					writer.println(tweet);
 				}
 			}
 		}
